@@ -6,9 +6,8 @@ pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
 snake = [405, 305, 205]
 apple = 805
-score = 0
 direction = 4
-dir = 4
+score = 0
 
 font = pygame.font.Font(None, 50)
 text_rect = pygame.Rect(50, 10, 0, 0)
@@ -58,20 +57,19 @@ while running:
             running = False
         elif event.type == pygame.KEYDOWN:
             if (event.key == pygame.K_UP or event.key == pygame.K_w) and direction != 3 and direction != 1:
-                dir = 1
+                direction = 1
                 break
             elif (event.key == pygame.K_LEFT or event.key == pygame.K_a) and direction != 4 and direction != 2:
-                dir = 2
+                direction = 2
                 break
             elif (event.key == pygame.K_DOWN or event.key == pygame.K_s) and direction != 1 and direction != 3:
-                dir = 3
+                direction = 3
                 break
             elif (event.key == pygame.K_RIGHT or event.key == pygame.K_d) and direction != 2 and direction != 4:
-                dir = 4
+                direction = 4
                 break
             else:
                 continue
-    direction = dir
     if check_win():
         break
     if check_lose():
